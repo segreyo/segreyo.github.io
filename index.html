@@ -7,7 +7,7 @@
     <title>My first Bootstrap</title>
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-    <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
   </head>
 
 <body>
@@ -79,12 +79,13 @@
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
+					<button class="close" type="button" data-dismiss="modal">&times;</button>
 					<h4 class="modal-title">Тут работает загрузка!</h4>
 				</div>
 				<div class="modal-body">
 					<div class="row">
 					  <!-- <input type="number" maxlength="10" id="count"> -->
-					    <button onclick="progress()" type="button" class="btn btn-lg btn-primary">Начать!</button>
+					    <button onclick="progress()" type="button" id="run" class="btn btn-lg btn-primary">Начать!</button>
 					    <hr>
 					
 					      <div class="progress">
@@ -101,16 +102,33 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div>    
+
   
       <script>
+
+var run = document.getElementById("run");
+    run.onclick = onElementClick;
+    var first_call = false;
+    function onElementClick() {  
+      if(!first_call){
+      	first();
+       	first_call = true;
+        return;
+      	}
+ 		// alert("Процесс не завершен");
+    	return false;
+    }
+    function first() {
+    progress();
+    }
+
 var progr = document.getElementById("progr");
 var c = document.getElementById("c");
 var b = document.getElementById("but");
 var timer = 0;
 function progress() {
-	progr.style.width = timer + "%";
-	
+	progr.style.width = timer + "%";	
 	if(timer >= 100) {
 		alert("Готово");
 		b.innerHTML = "ОК"
@@ -119,6 +137,7 @@ function progress() {
 	timer++;
 	c.innerHTML = timer + "%";
 	setTimeout(function(){progress()}, 100);
+	return;
 }
 
 function lol() {

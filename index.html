@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" >
+    <title>My first Bootstrap</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+
+<body>
+
+	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#"></a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<form class="navbar-form navbar-right" role="form">
+					<div class="form-group">
+						<input type="text" placeholder="Email" class="form-control">
+					</div>
+					<div class="form-group">
+						<input type="password" placeholder="Password" class="form-control">
+					</div>
+					<button type="submit" class="btn btn-success">Не войдешь!</button>
+				</form>
+			</div><!--/.navbar-collapse -->
+		</div>
+	</div>
+	<div class="jumbotron">
+		<div class="container">
+			<h1>Привет, Котян!</h1>
+			<p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+
+			<p><a href="#" class="btn btn-primary btn-lg" role="button" data-toggle="modal" data-target="#modal-1">Нажми меня</a></p>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<h2>Здесь Лепра</h2>
+				<img src="https://pp.vk.me/c623916/v623916108/3a267/UqpZKBuCIRs.jpg" alt="ololol" class="img-rounded">
+				<br>
+				<br>
+				<a class="btn btn-danger" href="https://leprosorium.ru/" role="button" target="_blank">Жми! &raquo;</a></p>
+			</div>
+
+			<div class="col-md-4">
+				<h2>А здесь Вконтактик</h2>
+				<img src="https://pp.vk.me/c623925/v623925549/3a7a9/QZiRTheoiUs.jpg" alt="ololol" class="img-rounded">
+				<br>
+				<br>
+				<a class="btn btn-info" href="http://vk.com/" role="button" target="_blank">Жми, епт! &raquo;</a></p>
+			</div>
+
+			<div class="col-md-4">
+				<h2>А здеееесь...</h2>
+				<img src="http://cs624931.vk.me/v624931056/1c01c/zqun4e_Iaco.jpg" alt="ololol" class="img-rounded">
+				<br>
+				<br>
+				<a class="btn btn-success" onclick="lol()" role="button" target="_blank">Жми, не ссы! &raquo;</a></p>
+			</div>
+		</div>
+		<hr>
+	</div>
+
+
+	<div class="container">
+	<div class="modal" id="modal-1">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Тут работает загрузка!</h4>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+					  <!-- <input type="number" maxlength="10" id="count"> -->
+					    <button onclick="progress()" type="button" class="btn btn-lg btn-primary">Начать!</button>
+					    <hr>
+					
+					      <div class="progress">
+					      	<div id="progr" class="progress-bar progress-bar-info progress-bar progress-bar-striped active" style="min-width: 3%;">
+					        <p id="c">0%</p>
+					      </div>
+					    </div>
+						</div>
+					 </div>
+				
+				<div id="foo" class="modal-footer">
+					<button id="but" class="btn btn-default" data-dismiss="modal">Отмена</button>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+  
+      <script>
+var progr = document.getElementById("progr");
+var c = document.getElementById("c");
+var b = document.getElementById("but");
+var timer = 0;
+function progress() {
+	progr.style.width = timer + "%";
+	
+	if(timer >= 100) {
+		alert("Готово");
+		b.innerHTML = "ОК"
+		return;
+	}
+	timer++;
+	c.innerHTML = timer + "%";
+	setTimeout(function(){progress()}, 100);
+}
+
+function lol() {
+	alert("ХА ХА!");
+}
+
+
+
+</script>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+
+
+
+
+
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	    <script src="js/bootstrap.min.js"></script>
+	  </body>
+</html>

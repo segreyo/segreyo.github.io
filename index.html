@@ -118,15 +118,29 @@ function progress() {
 	if(timer >= 100) {
 		alert("Готово");
 		b.innerHTML = "ОК"
+		progr.classList.remove("progress-bar-info");
+		progr.classList.add("progress-bar-success");	
+		run.innerHTML = "Готово";
+		run.classList.remove("btn-primary");
+		run.classList.add("btn-success");
+		but.classList.remove("btn-default");
+		but.classList.add("btn-success");  
 		b.onclick = function(){
 			progr.style.width = 0;
 			c.innerHTML = 0 + "%";
 			running = false;
 			b.innerHTML = "Отмена"
+			progr.classList.remove("progress-bar-success");
+			progr.classList.add("progress-bar-info"); 
+			run.classList.remove("btn-success"); 
+			run.classList.add("btn-primary"); 
+			run.innerHTML = "Начать";
+			but.classList.remove("btn-success"); 
+			but.classList.add("btn-default");
 		}
-		timer = 0;
-		return;
 		
+		timer = 0;
+		return;		
 	}
 	timer++;
 	c.innerHTML = timer + "%";

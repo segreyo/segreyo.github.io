@@ -46,28 +46,26 @@
 	</div>
 	<div class="container">
 		<div class="row">
-			<div class="col-md-4">
-				<h2>Здесь Лепра</h2>
-				<img src="https://pp.vk.me/c623916/v623916108/3a267/UqpZKBuCIRs.jpg" alt="ololol" class="img-rounded">
-				<br>
-				<br>
-				<a class="btn btn-danger" href="https://leprosorium.ru/" role="button" target="_blank">Жми! &raquo;</a></p>
-			</div>
-
-			<div class="col-md-4">
-				<h2>А здесь Вконтактик</h2>
-				<img src="https://pp.vk.me/c623925/v623925549/3a7a9/QZiRTheoiUs.jpg" alt="ololol" class="img-rounded">
-				<br>
-				<br>
-				<a class="btn btn-info" href="http://vk.com/" role="button" target="_blank">Жми, епт! &raquo;</a></p>
-			</div>
-
-			<div class="col-md-4">
-				<h2>А здеееесь...</h2>
+			<div class="col-md-4 col-sm-6 col-xs-6">
 				<img src="http://cs624931.vk.me/v624931056/1c01c/zqun4e_Iaco.jpg" alt="ololol" class="img-rounded">
 				<br>
 				<br>
-				<a class="btn btn-success" onclick="lol()" role="button" target="_blank">Жми, не ссы! &raquo;</a></p>
+				<img src="https://pp.vk.me/c623325/v623325921/21c81/VWBeDNa593Q.jpg" alt="ololol" class="img-rounded">				
+				
+			</div>
+
+			<div class="col-md-4 col-sm-6 col-xs-6">
+				<img src="https://pp.vk.me/c623925/v623925549/3a7a9/QZiRTheoiUs.jpg" alt="ololol" class="img-rounded">
+				<br>
+				<br>				
+				<img src="http://cs624631.vk.me/v624631488/29a78/bUdniHw28hw.jpg" alt="ololol" class="img-rounded">
+			</div>
+
+			<div class="col-md-4 col-sm-6 col-xs-6">
+				<img src="http://cs317516.vk.me/v317516981/9db2/uX-I2tIs0fQ.jpg" alt="ololol" class="img-rounded">
+				<br>
+				<br>
+				<img src="http://cs617630.vk.me/v617630332/17b2a/DWPDNeCySkc.jpg" alt="ololol" class="img-rounded">
 			</div>
 		</div>
 		<hr>
@@ -111,13 +109,11 @@ var run = document.getElementById("run");
     run.onclick = onElementClick;
     var running = false;
     function onElementClick() {  
-      if(!running){
-      	progress();
-       	running = true;
+      if(running){
         return;
       	}
- 		// alert("Процесс не завершен");
-    	return false;
+ 		progress();
+ 		running = true;
     }
 
 
@@ -135,6 +131,7 @@ function progress() {
 			progr.style.width = 0;
 			c.innerHTML = 0 + "%";
 			running = false;
+			b.innerHTML = "Отмена"
 		}
 		timer = 0;
 		return;
@@ -142,7 +139,7 @@ function progress() {
 	}
 	timer++;
 	c.innerHTML = timer + "%";
-	setTimeout(function(){progress()}, 100);
+	setTimeout(function(){progress()}, 50);
 	return;
 }
 

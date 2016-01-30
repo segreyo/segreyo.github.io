@@ -109,16 +109,18 @@
 
 var run = document.getElementById("run");
     run.onclick = onElementClick;
-    var first_call = false;
+    var running = false;
     function onElementClick() {  
-      if(!first_call){
+      if(!running){
       	progress();
-       	first_call = true;
+       	running = true;
         return;
       	}
  		// alert("Процесс не завершен");
     	return false;
     }
+
+
 
 var progr = document.getElementById("progr");
 var c = document.getElementById("c");
@@ -129,7 +131,14 @@ function progress() {
 	if(timer >= 100) {
 		alert("Готово");
 		b.innerHTML = "ОК"
+		b.onclick = function(){
+			progr.style.width = 0;
+			c.innerHTML = 0 + "%";
+			running = false;
+		}
+		timer = 0;
 		return;
+		
 	}
 	timer++;
 	c.innerHTML = timer + "%";

@@ -112,15 +112,12 @@ var run = document.getElementById("run");
     var first_call = false;
     function onElementClick() {  
       if(!first_call){
-      	first();
+      	progress();
        	first_call = true;
         return;
       	}
  		// alert("Процесс не завершен");
     	return false;
-    }
-    function first() {
-    progress();
     }
 
 var progr = document.getElementById("progr");

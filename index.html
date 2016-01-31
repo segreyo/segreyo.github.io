@@ -41,7 +41,7 @@
 			<h1>Привет</h1>
 			<p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
 
-			<p><a href="#" class="btn btn-primary btn-lg" role="button" data-toggle="modal" data-target="#modal-1">Нажми меня</a></p>
+			<p><a href="#" class="btn btn-primary btn-lg" role="button" data-toggle="modal" onclick="clear()" data-target="#modal1">Нажми меня</a></p>
 		</div>
 	</div>
 	<div class="container">
@@ -64,7 +64,7 @@
 
 
 	<div class="container">
-	<div class="modal" id="modal-1">
+	<div class="modal" id="modal1">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -73,10 +73,7 @@
 				</div>
 				<div class="modal-body">
 					<div class="row">
-					  <!-- <input type="number" maxlength="10" id="count"> -->
-					    <button onclick="progress()" type="button" id="run" class="btn btn-lg btn-primary">Начать!</button>
-					    <hr>
-					
+					    <hr>					
 					      <div class="progress">
 					      	<div id="progr" class="progress-bar progress-bar-info progress-bar progress-bar-striped active" style="min-width: 3%;">
 					        <p id="c">0%</p>
@@ -84,9 +81,9 @@
 					    </div>
 						</div>
 					 </div>
-				
+						
 				<div id="foo" class="modal-footer">
-					<button id="but" class="btn btn-default" data-dismiss="modal">Отмена</button>
+					<button type="button" id="run" onclick="progress()" class="btn btn-lg btn-primary">Начать!</button>
 				</div>
 				</div>
 			</div>
@@ -94,63 +91,62 @@
 	</div>    
 
   
-      <script>
-
-var run = document.getElementById("run");
-    run.onclick = onElementClick;
-    var running = false;
-    function onElementClick() {  
-      if(running){
-        return;
-      	}
- 		progress();
- 		running = true;
-    }
-
+<script>
 
 
 var progr = document.getElementById("progr");
 var c = document.getElementById("c");
-var b = document.getElementById("but");
+var m = document.getElementById("modal1");
+var run = document.getElementById("run");
 var timer = 0;
-function progress() {
-	progr.style.width = timer + "%";	
-	if(timer >= 100) {
-		alert("Готово");
-		b.innerHTML = "ОК"
-		progr.classList.remove("progress-bar-info");
-		progr.classList.add("progress-bar-success");	
-		run.innerHTML = "Готово";
-		run.classList.remove("btn-primary");
-		run.classList.add("btn-success");
-		but.classList.remove("btn-default");
-		but.classList.add("btn-success");  
-		b.onclick = function(){
-			progr.style.width = 0;
-			c.innerHTML = 0 + "%";
-			running = false;
-			b.innerHTML = "Отмена"
-			progr.classList.remove("progress-bar-success");
-			progr.classList.add("progress-bar-info"); 
-			run.classList.remove("btn-success"); 
-			run.classList.add("btn-primary"); 
-			run.innerHTML = "Начать";
-			but.classList.remove("btn-success"); 
-			but.classList.add("btn-default");
-		}
+    run.onclick = onElementClick;
+    var running = false;
+    function onElementClick() {  	
+      if(running){
+        return;
+      	}	      	
+ 		progress();
+ 		running = true; 		
+    }
 		
-		timer = 0;
-		return;		
+var progress = function() {
+	// run.removeAttribute('data-dismiss', 'modal');  // куда его вставить
+	progr.style.width = timer + "%";
+	if(timer >= 100) {		
+		alert("Готово");
+		run.innerHTML = "Готово!" 
+		progr.classList.remove("progress-bar-info");			
+		progr.classList.add("progress-bar-success");	
+		run.classList.add("btn-success"); 
+		run.classList.remove("btn-primary"); 
+		run.innerHTML = "Готово!";
+		run.setAttribute('data-dismiss', 'modal');	// куда его вставить
+		timer = 0;	
+		// возможно не хватает running = true;		
+		return;				
+	}
+	run.onclick = function(){	// сейчас нажатие на изменившуюся "Готово!", кроме обнуления значений, запускат onElementClick(), что не дает повторно запускать прогресс.
+		progr.style.width = timer + "%";
+		c.innerHTML = timer + "%";		
+		progr.classList.remove("progress-bar-success");
+		progr.classList.add("progress-bar-info"); 
+		run.classList.remove("btn-success"); 
+		run.classList.add("btn-primary"); 
+		run.innerHTML = "Начать";
+		run.removeAttribute('data-dismiss', 'modal'); // куда его вставить
+		running = false;	
 	}
 	timer++;
 	c.innerHTML = timer + "%";
-	setTimeout(function(){progress()}, 50);
+	setTimeout(function(){progress()}, 50);		
 	return;
 }
 
-function lol() {
-	alert("ХА ХА!");
+// запуск модального окна и обнуление всех значений - не знаю куда вставить
+	m.onclick = function(){	
+
 }
+
 
 
 

@@ -1,3 +1,11 @@
 #content {
 	font-size: 40px;
 }
+
+.navbar-wrapper {
+	margin-top: 20px;
+}
+
+#conthead {
+	border-radius: 4px;
+}

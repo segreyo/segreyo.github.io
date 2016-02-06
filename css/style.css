@@ -1,6 +1,15 @@
 .carousel {
-	margin-bottom: 50px;
+	margin-bottom: 60px;
 }
+
+.navbar-wrapper {
+	position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 20;
+}
+
 
 #content {
 	font-size: 40px;

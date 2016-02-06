@@ -8,4 +8,47 @@
 
 #conthead {
 	border-radius: 4px;
+	z-index: 1000;
+}
+
+
+
+#myCarousel {
+	z-index: 500;
+	background-color: #261D32;	
+	color: #208C8F;
+	font-size: 20px;
+
+
+
+}
+
+#headImg {
+	background-color: #208C8F;
+	height: 80px;
+}
+
+#bodyImg {
+/*	height: 800px; */
+	background-color: #261D32;	
+	color: #FF6508;
+	font-size: 20px;
+}
+#foo {
+	background-color: #208C8F;
+}
+
+#run {
+	background-color: #48385A;
+	color: #FCEBCD;	
+	font-size: 2.0em;
+	font-weight: bold; 	
+}
+
+.close {
+	color: #000000;
+	font-size: 50px;
+}
+#dd {
+ 	background-color: #000000; 
 }

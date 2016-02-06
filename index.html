@@ -45,16 +45,16 @@
 
 				<form class="navbar-form navbar-right" role="form">
 					<div class="form-group">
-						<input type="text" placeholder="Имя" class="form-control">
+						<input type="name" id="formName" placeholder="Имя" value="" class="form-control">
 					</div>
-					<button type="submit" class="btn btn-success">Войти</button>
+					<button type="button" onclick="writeName()" class="btn btn-success">Войти</button>
 				</form>
 			</div><!--/.navbar-collapse -->
 		</div>
 	</div>
 	<div class="jumbotron">
 		<div class="container">
-			<h1>Привет</h1>
+			<h1 id="result">Привет</h1>
 			<p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
 
 			<p><a href="#" class="btn btn-primary btn-lg" role="button" data-toggle="modal" onclick="clear()" data-target="#modal1">Нажми меня</a></p>
@@ -65,46 +65,41 @@
 		<div class="row">
 			<div class="col-md-4 col-sm-4" id="col-dark">
 				<img src="http://cs624931.vk.me/v624931056/1c01c/zqun4e_Iaco.jpg" alt="ololol" class="img-rounded ">
-				<p>*************************</p>
+				<p ></p>
 				<img src="https://pp.vk.me/c623325/v623325921/21c81/VWBeDNa593Q.jpg" alt="ololol" class="img-rounded ">	
 							
 			</div>
 			<div class="col-md-4 col-sm-4  ">
 				<img src="https://pp.vk.me/c623925/v623925549/3a7a9/QZiRTheoiUs.jpg" alt="ololol" class="img-rounded ">				
+				<p></p>
 				<img src="http://cs624631.vk.me/v624631488/29a78/bUdniHw28hw.jpg" alt="ololol" class="img-rounded ">
-				<p>*************************</p>
+				
 			</div>
 			<div class="col-md-4 col-sm-4  ">
 				<img src="http://cs317516.vk.me/v317516981/9db2/uX-I2tIs0fQ.jpg" alt="ololol" class="img-rounded ">
-				<img src="http://cs617630.vk.me/v617630332/17b2a/DWPDNeCySkc.jpg" alt="ololol" class="img-rounded ">
-				<p>*************************</p>
+				<p></p>
+				<img src="http://cs617630.vk.me/v617630332/17b2a/DWPDNeCySkc.jpg" alt="ololol" class="img-rounded ">				
 			</div>
 		</div>
-		<hr>
 	</div>
 
 
-	<div class="container">
+<div class="container">
 	<div class="modal" id="modal1">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header" id="headImg">
-					<button class="close" type="button" data-dismiss="modal">&times;</button>
-
-					
+					<button class="close" type="button" data-dismiss="modal">&times;</button>					
 				</div>
 				<div class="modal-body" id="bodyImg">
 					<div class="row">
-
-					<div id="myCarousel" class="carousel slide modal-body" >
-					
+					<div id="myCarousel" class="carousel slide modal-body" >					
 						<!-- Индикаторы слайдов -->
 						<!-- <ol class="carousel-indicators">
 							<li class="active" data-target="#carousel" data-slide-to="0"></li>
 							<li data-target="#myCarousel" data-slide-to="1"></li>
 							<li data-target="#myCarousel" data-slide-to="2"></li>
-						</ol> -->
-					
+						</ol> -->					
 						<!-- Слайды -->
 						<div class="carousel-inner">
 							<div class="item active">
@@ -116,8 +111,7 @@
 							<div class="item">
 								<img src="images/drift.jpg" height="800" width="1920" alt="">
 							</div>
-						</div>
-					
+						</div>					
 						<!-- Стрелки лоя слайдов -->
 						<a href="#myCarousel" class="left carousel-control" data-slide="prev">
 							<span class="glyphicon glyphicon-chevron-left"></span>
@@ -125,12 +119,11 @@
 						<a href="#myCarousel" class="right carousel-control" data-slide="next">
 							<span class="glyphicon glyphicon-chevron-right"></span>
 						</a>
-					</div>
-					
-					      <div class="progress">
-					      	<div id="progr" class="progress-bar progress-bar-info progress-bar progress-bar-striped active" style="min-width: 3%;">
-					        <p id="c">0%</p>
-					      </div>
+					</div>					
+					    <div class="progress">
+					    	<div id="progr" class="progress-bar progress-bar-info progress-bar progress-bar-striped active" style="min-width: 3%;">
+					        	<p id="c">0%</p>
+					      	</div>
 					    </div>
 					    <p class="textSlide">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem quasi totam numquam, illo ratione, eum fugit sapiente, aspernatur quidem eius eveniet! Enim consectetur quasi eos temporibus minus, aliquid repudiandae, ad, explicabo quod aperiam at. In quasi molestiae maiores voluptatibus culpa.</p>
 					</div>
@@ -138,14 +131,15 @@
 				<div id="foo" class="modal-footer">
 					<button type="button" id="run" onclick="progress()" class="btn btn-lg btn-primary">Начать!</button>
 				</div>
-				</div>
 			</div>
 		</div>
-	</div>    
-	<p class="pull-center"><a href="#">Back to top</a></p>
-		<canvas id='example'>Обновите браузер</canvas>
+	</div>
+</div>    
 
-	</body>
+<p class="pull-center"><a href="#">Back to top</a></p>
+	<canvas id='example'>Обновите браузер</canvas>
+
+</body>
 
 
 
@@ -166,7 +160,6 @@ var timer = 0;
     }
 		
 var progress = function() {
-	// run.removeAttribute('data-dismiss', 'modal');  // куда его вставить
 	progr.style.width = timer + "%";
 	if(timer >= 100) {		
 		alert("Готово");
@@ -176,12 +169,12 @@ var progress = function() {
 		run.classList.add("btn-success"); 
 		run.classList.remove("btn-primary"); 
 		run.innerHTML = "Готово!";
-		run.setAttribute('data-dismiss', 'modal');	// куда его вставить
+		run.setAttribute('data-dismiss', 'modal');
 		timer = 0;	
-		// возможно не хватает running = true;		
+		running = true;		
 		return;				
 	}
-	run.onclick = function(){	// сейчас нажатие на изменившуюся "Готово!", кроме обнуления значений, запускат onElementClick(), что не дает повторно запускать прогресс.
+	run.onclick = function(){	
 		progr.style.width = timer + "%";
 		c.innerHTML = timer + "%";		
 		progr.classList.remove("progress-bar-success");
@@ -190,7 +183,8 @@ var progress = function() {
 		run.classList.add("btn-primary"); 
 		run.innerHTML = "Начать";
 		run.removeAttribute('data-dismiss', 'modal'); // куда его вставить
-		running = false;	
+		running = false;
+		run.onclick = onElementClick;
 	}
 	timer++;
 	c.innerHTML = timer + "%";
@@ -198,10 +192,13 @@ var progress = function() {
 	return;
 }
 
-// запуск модального окна и обнуление всех значений - не знаю куда вставить
-	m.onclick = function(){	
 
+writeName = function(){
+	var res = document.getElementById("result");
+	var z = document.getElementById("formName");			
+	result.innerHTML = "Привет, " + z.value;
 }
+
 
 
 </script>

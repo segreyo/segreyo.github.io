@@ -4968,13 +4968,14 @@ a.badge:focus {
   padding-top: 48px;
   padding-bottom: 48px;
   margin-bottom: 30px;
-  margin-top: 50px;
+/*  margin-top: 50px;*/
   color: inherit;
   background-color: #eeeeee;
 }
 .jumbotron h1,
 .jumbotron .h1 {
   color: inherit;
+  padding-top: 50px;
 }
 .jumbotron p {
   margin-bottom: 15px;

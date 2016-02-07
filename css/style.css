@@ -1,6 +1,15 @@
-.carousel {
-	margin-bottom: 60px;
+body {
+    padding-bottom: 40px;
+    color: #5a5a5a;
 }
+
+
+
+#myCarousel1 {
+     height: 500px;
+margin-bottom: 60px; 
+}
+
 
 .navbar-wrapper {
 	position: absolute;
@@ -22,17 +31,20 @@
 #conthead {
 	border-radius: 4px;
 	z-index: 1000;
+	opacity: 0.5;
 }
 
-
+#conthead:hover {
+	border-radius: 4px;
+	z-index: 1000;
+	opacity: 1;
+}
 
 #myCarousel {
 	background-color: #261D32;	
 	color: #208C8F;
 	font-size: 20px;
-
-
-
+	margin-bottom: 60px;
 }
 
 #headImg {
@@ -41,7 +53,7 @@
 }
 
 #bodyImg {
-/*	height: 800px; */
+/*	height: 500px; */
 	background-color: #261D32;	
 	color: #FF6508;
 	font-size: 20px;
@@ -61,6 +73,42 @@
 	color: #000000;
 	font-size: 50px;
 }
-#dd {
- 	background-color: #000000; 
+
+
+.marketing h2 {
+    font-weight: normal;
+
 }
+
+.marketing .col-lg-4 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.featurette-heading {
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -1px;
+    padding-top: 120px;
+    font-size: 50px;
+
+}
+
+#dd {
+	background-image: url("http://www.toyfarm.org/gallery/themes/sobriety/images/backgrounds/progressbar.png") ; norepeat;
+	color: #fff;
+}
+
+.featurette-divider {
+margin: 80px 0;	
+}
+
+.navbar-form {
+	margin-right: 10px;
+}
+
+.jumbotron {
+	background-image: url("http://forumarchitects.in/images/rev-slide-1-bg.jpg")
+}
+
+	

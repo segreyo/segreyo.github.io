@@ -6,7 +6,7 @@ body {
 
 
 #myCarousel1 {
-     height: 500px;
+/*     height: 500px;*/
 margin-bottom: 60px; 
 }
 
@@ -110,5 +110,11 @@ margin: 80px 0;
 .jumbotron {
 	background-image: url("http://forumarchitects.in/images/rev-slide-1-bg.jpg")
 }
+
+.glyphicon-arrow-down:hover{
+
+	color: red;
+}	
+
 
 	

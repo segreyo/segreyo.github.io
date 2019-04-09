@@ -168,22 +168,21 @@ var timer = 0;
 var progress = function() {
 	progr.style.width = timer + "%";
 	if(timer >= 100) {		
-		alert("Готово");
+		// alert("Готово");
 		run.innerHTML = "Готово!" 
 		progr.classList.remove("progress-bar-info");			
 		progr.classList.add("progress-bar-success");	
 		run.classList.add("btn-success"); 
 		run.classList.remove("btn-primary"); 
-		run.innerHTML = "Готово!";
+		// run.innerHTML = "Готово!";
 		run.setAttribute('data-dismiss', 'modal');
 		timer = 0;	
 		running = true;		
 		return;				
 	}
-	run.onclick = function(){	
+	run.onclick = function(){			
 		progr.style.width = timer + "%";
-		c.innerHTML = timer + "%";		
-		progr.classList.remove("progress-bar-success");
+		c.innerHTML = timer + "%";				
 		progr.classList.add("progress-bar-info"); 
 		run.classList.remove("btn-success"); 
 		run.classList.add("btn-primary"); 
@@ -191,10 +190,11 @@ var progress = function() {
 		run.removeAttribute('data-dismiss', 'modal'); // куда его вставить
 		running = false;
 		run.onclick = onElementClick;
+		progr.classList.remove("progress-bar-success");
 	}
 	timer++;
 	c.innerHTML = timer + "%";
-	setTimeout(function(){progress()}, 50);		
+	setTimeout(function(){progress()}, 100);		
 	return;
 }
 
